@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffusion vs Transformer LLMs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Understanding Diffusion vs Transformer LLMs</h1>
+            <p class="subtitle">Interactive visualizations of two major language model architectures</p>
+        </header>
+        
+        <div class="content">
+            <div class="section" id="diffusion-section">
+                <div class="section-header">
+                    <h2><i class="bi bi-diagram-3"></i> Diffusion-Based LLMs</h2>
+                    <span class="badge">Iterative Processing</span>
+                </div>
+                <p>Diffusion-based LLMs generate text by iteratively refining a noisy input to produce a coherent output, similar to how diffusion models work in image generation.</p>
+                <button id="start-diffusion"><i class="bi bi-play-fill"></i> Start Animation</button>
+                <div class="animation-container" id="diffusion-animation"></div>
+                <div class="details">
+                    <h3><i class="bi bi-info-circle"></i> How It Works</h3>
+                    <p>Diffusion models start with a noisy input (often random tokens) and iteratively refine it to produce a coherent text output. Each denoising step reduces the randomness, gradually transforming noise into meaningful text. This process can take multiple iterations before producing the final output.</p>
+                    <div class="key-points">
+                        <div class="key-point">
+                            <span class="point-icon"><i class="bi bi-arrow-repeat"></i></span>
+                            <span class="point-text">Iterative refinement process</span>
+                        </div>
+                        <div class="key-point">
+                            <span class="point-icon"><i class="bi bi-snow"></i></span>
+                            <span class="point-text">Noise-to-signal transition</span>
+                        </div>
+                        <div class="key-point">
+                            <span class="point-icon"><i class="bi bi-clock"></i></span>
+                            <span class="point-text">Multiple denoising steps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="transformer-section">
+                <div class="section-header">
+                    <h2><i class="bi bi-cpu"></i> Transformer-Based LLMs</h2>
+                    <span class="badge">Parallel Processing</span>
+                </div>
+                <p>Transformer-based LLMs use self-attention mechanisms to process tokens in parallel and generate text by learning relationships between different parts of the input.</p>
+                <button id="start-transformer"><i class="bi bi-play-fill"></i> Start Animation</button>
+                <div class="animation-container" id="transformer-animation"></div>
+                <div class="details">
+                    <h3><i class="bi bi-info-circle"></i> How It Works</h3>
+                    <p>Transformer models process all input tokens simultaneously through multiple attention heads, allowing them to capture complex relationships between words. Each token can attend to every other token, enabling the model to understand context and generate coherent text.</p>
+                    <div class="key-points">
+                        <div class="key-point">
+                            <span class="point-icon"><i class="bi bi-grid-3x3"></i></span>
+                            <span class="point-text">Self-attention mechanism</span>
+                        </div>
+                        <div class="key-point">
+                            <span class="point-icon"><i class="bi bi-arrows"></i></span>
+                            <span class="point-text">Token relationships</span>
+                        </div>
+                        <div class="key-point">
+                            <span class="point-icon"><i class="bi bi-lightning"></i></span>
+                            <span class="point-text">Parallel computation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Created for educational purposes to visualize the differences between LLM architectures.</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
